@@ -1,0 +1,6 @@
+Proceso0: Creando el fichero.
+Proceso0: Valor leído del fichero: 0
+Proceso0: Valor escrito en el fichero: 1
+Proceso0: Creando el fichero.
+Proceso0: Valor leído del fichero: 0
+Proceso0: Valor escrito en el fichero: 1
