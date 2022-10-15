@@ -36,16 +36,16 @@ public class Main {
         if (args.length > 0) {
             orden = Integer.parseInt(args[0]);
             //Número de orden de creación de este proceso
-            try {
-                //Rediregimos salida y error estándar a un fichero
-                PrintStream ps = new PrintStream(
-                        new BufferedOutputStream(new FileOutputStream(
-                                new File("javalog.txt"), true)), true);
-                System.setOut(ps);
-                System.setErr(ps);
-            } catch (Exception e) {
-                System.err.println("P" + orden + " No he podido redirigir salidas.");
-            }
+        }
+        try {
+            //Rediregimos salida y error estándar a un fichero
+            PrintStream ps = new PrintStream(
+                    new BufferedOutputStream(new FileOutputStream(
+                            new File("javalog.txt"), true)), true);
+            System.setOut(ps);
+            System.setErr(ps);
+        } catch (Exception e) {
+            System.err.println("P" + orden + " No he podido redirigir salidas.");
         }
         //Identificamos el sistema operativo para poder acceder por su ruta al
         //fichero de forma correcta.
