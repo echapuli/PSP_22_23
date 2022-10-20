@@ -5,6 +5,9 @@
  */
 package dekker1;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author eduardo
@@ -12,7 +15,6 @@ package dekker1;
 public class ClaseHilo extends Thread {
 
     private int numHilo;
-    private boolean matar = false;
 
     public ClaseHilo(int numHilo) {
         this.numHilo = numHilo;
@@ -21,29 +23,34 @@ public class ClaseHilo extends Thread {
     @Override
     public void run() {
         System.out.println("Ejecutando hilo " + numHilo);
-        while (!matar) {
+        //entramos 10 veces a la sección cítica
+
+        for (int j = 1; j < 11; j++) {
+
             while (Valores.getTurno() != numHilo) {
-                //espera activa mientras no tenga el turno
+                try {
+                    //mientras el turno no sea suyo espera
+                    sleep(10);
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(ClaseHilo.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
             //entra en sección Critica
-            System.out.println("Hilo " + numHilo + " entra en sección critica");
-            for (int i = 1; i < 11; i++) {
+            System.out.println("Hilo " + numHilo + " entra en sección critica "+j+" veces");
+            for (int i = 1; i < 11; i++) { //cuenta hasta 10
                 System.out.println("hilo " + numHilo + " valor " + i);
             }
             //sale de la sección critica
             //le da el turno al otro hilo
-                       System.out.println("Hilo " + numHilo + " sale en sección critica");     
-            if (Valores.getTurno()==1)
-                  Valores.setTurno(2);
-            else
-                  Valores.setTurno(1);
-            
-        
-        }
-    }
+            System.out.println("Hilo " + numHilo + " sale en sección critica");
+            if (Valores.getTurno() == 1) {
+                Valores.setTurno(2);
+            } else {
+                Valores.setTurno(1);
+            }
 
-    public void setMatar() {
-        this.matar = true;
+        }
+        System.out.println("Hilo " + numHilo + " termina");
     }
 
 }
