@@ -10,9 +10,10 @@ package dekker1;
  * @author Eduardo
  */
 public class Valores {
+
      private static int turno=1; 
 
-    public Valores(int numHilo) {
+    public Valores() {
     }
 
     public static int getTurno() {

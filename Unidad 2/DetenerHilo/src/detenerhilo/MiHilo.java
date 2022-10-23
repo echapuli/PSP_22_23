@@ -21,7 +21,6 @@ public class MiHilo extends Thread {
 
     public void detenElHilo() {
         continuar = false;
-        //this.stop();
     }
 
     @Override

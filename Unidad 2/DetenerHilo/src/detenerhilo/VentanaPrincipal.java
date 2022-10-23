@@ -43,21 +43,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jBMH1.setText("Matar Hilo 1");
+        jBMH1.setText("Finalizar Hilo 1");
         jBMH1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBMH1ActionPerformed(evt);
             }
         });
 
-        jBMH2.setText("Matar Hilo 2");
+        jBMH2.setText("Finalizar Hilo 2");
         jBMH2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBMH2ActionPerformed(evt);
             }
         });
 
-        jBMH3.setText("Matar Hilo 3");
+        jBMH3.setText("Finalizar Hilo 3");
         jBMH3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBMH3ActionPerformed(evt);
@@ -75,7 +75,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addComponent(jBMH2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jBMH3)
-                .addContainerGap(62, Short.MAX_VALUE))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
