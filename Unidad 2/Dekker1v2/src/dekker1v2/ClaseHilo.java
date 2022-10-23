@@ -19,7 +19,7 @@ public class ClaseHilo extends Thread {
 
     public ClaseHilo(int numHilo, Valores v) {
         this.numHilo = numHilo;
-        this.v=v;
+        this.v = v;
     }
 
     @Override
@@ -30,15 +30,16 @@ public class ClaseHilo extends Thread {
         for (int j = 1; j < 11; j++) {
 
             while (v.getTurno() != numHilo) {
-                try {
-                    //mientras el turno no sea suyo espera
-                    sleep(10);
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(ClaseHilo.class.getName()).log(Level.SEVERE, null, ex);
-                }
+//                try {
+//                    //mientras el turno no sea suyo espera
+//                    sleep(10);
+//                } catch (InterruptedException ex) {
+//                    Logger.getLogger(ClaseHilo.class.getName()).log(Level.SEVERE, null, ex);
+//                }
+                System.out.println("Turno " + v.getTurno() + "-Espera Hilo " + numHilo);
             }
             //entra en sección Critica
-            System.out.println("Hilo " + numHilo + " entra en sección critica "+j+" veces");
+            System.out.println("Hilo " + numHilo + " entra en sección critica " + j + " veces");
             for (int i = 1; i < 11; i++) { //cuenta hasta 10
                 System.out.println("hilo " + numHilo + " valor " + i);
             }
