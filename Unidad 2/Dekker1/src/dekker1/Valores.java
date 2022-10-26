@@ -11,7 +11,12 @@ package dekker1;
  */
 public class Valores {
 
-     private static int turno=1; 
+     private static volatile int turno=1; 
+     //¡¡¡OJO!!!
+     //cuando el programa es ejecutado en una computadora con varios núcleos — todas las modernas — , los hilos hilo1 y hilo2 pueden ser ejecutados en procesadores diferentes
+     //Anteponiendo volatile a la definición de la variable _stop estamos diciendo al compilador que el valor contenido en esa dirección de memoria puede modificarse en 
+     //cualquier momento, y queremos que dicha modificación sea visible inmediatamente para todos los hilos que están accediendo a ella, no queremos que su valor sea copiado 
+     //en la caché del procesador.
 
     public Valores() {
     }

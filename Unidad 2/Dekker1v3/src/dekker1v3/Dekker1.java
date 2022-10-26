@@ -21,7 +21,7 @@ public class Dekker1 {
     
     private static class ClaseHilo extends Thread {
 
-        private int numHilo;
+        private volatile int numHilo;
 
         public ClaseHilo(int numHilo) {
             this.numHilo = numHilo;
@@ -35,13 +35,7 @@ public class Dekker1 {
             for (int j = 1; j < 11; j++) {
 
                 while (turno != numHilo) {
-//                try {
-//                    //mientras el turno no sea suyo espera
-//                    sleep(10);
-//                } catch (InterruptedException ex) {
-//                    Logger.getLogger(ClaseHilo.class.getName()).log(Level.SEVERE, null, ex);
-//                }
-                    System.out.println("Turno " + turno + "-Espera Hilo " + numHilo);
+
                 }
                 //entra en sección Critica
                 System.out.println("Hilo " + numHilo + " entra en sección critica " + j + " veces");

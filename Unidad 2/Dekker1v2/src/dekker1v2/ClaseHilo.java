@@ -30,13 +30,7 @@ public class ClaseHilo extends Thread {
         for (int j = 1; j < 11; j++) {
 
             while (v.getTurno() != numHilo) {
-//                try {
-//                    //mientras el turno no sea suyo espera
-//                    sleep(10);
-//                } catch (InterruptedException ex) {
-//                    Logger.getLogger(ClaseHilo.class.getName()).log(Level.SEVERE, null, ex);
-//                }
-                System.out.println("Turno " + v.getTurno() + "-Espera Hilo " + numHilo);
+
             }
             //entra en sección Critica
             System.out.println("Hilo " + numHilo + " entra en sección critica " + j + " veces");
