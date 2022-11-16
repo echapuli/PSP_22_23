@@ -10,26 +10,23 @@ package factorialhilos;
  * @author Eduardo
  */
 public class Valores {
-     private static int factorial; 
-     private static String cadena;
-
-    public Valores() {
-    }
+     private volatile static int factorial; 
+     private volatile static String cadena;
 
     public static int getFactorial() {
         return factorial;
     }
 
-    public static void setFactorial(int factorial) {
-        Valores.factorial = factorial;
+    public static void setFactorial(int fac) {
+        factorial = fac;
     }
 
     public static String getCadena() {
         return cadena;
     }
 
-    public static void setCadena(String cadena) {
-        Valores.cadena = cadena;
+    public static void setCadena(String cad) {
+        cadena = cad;
     }
      
 }

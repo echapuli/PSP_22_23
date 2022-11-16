@@ -8,19 +8,15 @@ package factorialhilos;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+
 /**
  *
  * @author Eduardo
  */
 public class HiloFactorial extends Thread{
-
+    private int valor;
    @Override
     public void run() {
-        super.run(); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public HiloFactorial(int valor) {
-
         if (valor==1) {  //caso base
             Valores.setFactorial(1);
             Valores.setCadena("1");
@@ -32,9 +28,15 @@ public class HiloFactorial extends Thread{
             } catch (InterruptedException ex) {
                 Logger.getLogger(HiloFactorial.class.getName()).log(Level.SEVERE, null, ex);
             }
+            Valores.setCadena(valor+"*"+Valores.getCadena());
             Valores.setFactorial(Valores.getFactorial()*valor);
-            Valores.setCadena(valor+"*"+Valores.getCadena());            
+            
         }
+    }
+
+    public HiloFactorial(int num) {
+       valor=num;
+
     }
     
 }

@@ -21,14 +21,15 @@ public class FactorialHilos {
      */
     public static void main(String[] args) {
             
-            HiloFactorial hilo=new HiloFactorial(7); //factorial de 7
+            HiloFactorial hilo=new HiloFactorial(5); //factorial de 7
             hilo.start();
             try {
                 hilo.join(); //para el hilo actual hasta que termine el hilo 'hilo'
             } catch (InterruptedException ex) {
                 Logger.getLogger(HiloFactorial.class.getName()).log(Level.SEVERE, null, ex);
             }
-            System.out.println(Valores.getFactorial()+"="+Valores.getCadena());
+            System.out.println(Valores.getCadena()+"="+Valores.getFactorial());
+
     }
 
     public int getFactorial() {
