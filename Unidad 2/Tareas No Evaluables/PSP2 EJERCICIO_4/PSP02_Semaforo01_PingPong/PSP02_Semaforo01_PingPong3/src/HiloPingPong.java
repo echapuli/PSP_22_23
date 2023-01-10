@@ -29,6 +29,7 @@ public class HiloPingPong extends Thread {
                 } catch (InterruptedException ex) {
                     Logger.getLogger(HiloPingPong.class.getName()).log(Level.SEVERE, null, ex);
                 }
+                System.out.println("permisos disponibles: "+semaforoPelota.availablePermits());
                 //imprimo
                 if (jugador == 1) {
                     System.out.println(getName()+"-PING");
