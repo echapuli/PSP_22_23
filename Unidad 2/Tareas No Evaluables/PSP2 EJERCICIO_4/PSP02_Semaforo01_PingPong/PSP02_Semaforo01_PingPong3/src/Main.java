@@ -12,7 +12,8 @@ public class Main {
         Semaphore semaforoPelota = new Semaphore(1);
         Turno turno = new Turno(1);
         //semáforo para las secciones críticas de esta clase (permisos 1)
-
+        //es el mismo ejercicio que elanterior pero si solo fuesen un jugador no haría falta el semáforo
+        //se crean dos jugadores de cada lado y vemos que funciona perfectamente
         HiloPingPong j11 = new HiloPingPong("jugador11", 1, semaforoPelota, turno);
         HiloPingPong j12 = new HiloPingPong("jugador12", 1, semaforoPelota, turno);
         HiloPingPong j21 = new HiloPingPong("jugador21", 2, semaforoPelota, turno);

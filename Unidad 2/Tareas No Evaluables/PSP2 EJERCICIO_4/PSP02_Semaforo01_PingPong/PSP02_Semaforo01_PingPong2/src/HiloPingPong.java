@@ -20,25 +20,30 @@ public class HiloPingPong extends Thread {
         int i = 0;
         do {
             //para garantizar que golpean alternativamente los jugafores
+            while (turno.getTurno() != jugador) {
+                yield();
+            }
+            //bloqueo el recurso
+
+            try {
+                semaforoPelota.acquire(); //adquiere  el acceso
+            } catch (InterruptedException ex) {
+                Logger.getLogger(HiloPingPong.class.getName()).log(Level.SEVERE, null, ex);
+            }
             if (turno.getTurno() == jugador) {
                 i++;
-                //bloqueo el recurso
-//                try {
-//                    semaforoPelota.acquire();
-//                } catch (InterruptedException ex) {
-//                    Logger.getLogger(HiloPingPong.class.getName()).log(Level.SEVERE, null, ex);
-//                }
+
                 //imprimo
                 if (jugador == 1) {
-                    System.out.println("PING");
+                    System.out.println(getName() + "-PING");
                 } else {
-                    System.out.println("PONG");
+                    System.out.println(getName() + "-PONG");
                 }
 
                 //libero el recurso
                 turno.siguienteTuno();
-//                semaforoPelota.release();
             }
+            semaforoPelota.release();
             yield();
         } while (i <= 10);
     }

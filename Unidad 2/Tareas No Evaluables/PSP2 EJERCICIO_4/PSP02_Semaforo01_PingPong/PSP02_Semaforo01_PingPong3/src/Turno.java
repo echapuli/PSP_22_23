@@ -14,12 +14,12 @@ public class Turno {
     public Turno(int turno) {
         this.turno = turno;
     }
-    public void siguienteTuno(){
+    public synchronized void siguienteTuno(){
         if (turno==1) turno=2;
         else turno=1;
     }
 
-    public int getTurno() {
+    public synchronized int getTurno() {
         return turno;
     }
     
