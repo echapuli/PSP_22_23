@@ -25,10 +25,11 @@ public class Hilo extends Thread {
     @Override
     public void run() {
         for (int i = 1; i <= 20; i++) {
-            if (numhilo == t.getTurno()) {
-                System.out.println("hilo " + numhilo + " - " + i);
-                t.siguienteTurno();
-            }
+            t.mirarTurno();
+
+            System.out.println("hilo " + numhilo + " - " + i);
+            t.siguienteTurno();
+
         }
     }
 

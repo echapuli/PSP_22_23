@@ -1,8 +1,7 @@
 
 class DatosCompartidos {
 
-    public String dato;
-    public boolean datoDisponible = false;
+    private String dato;
 
     public synchronized String getDato() {
         

@@ -20,7 +20,7 @@ public class Turno {
         turno = 1;
     }
 
-    public synchronized int getTurno() {
+    public synchronized void mirarTurno() {
 
         while (((Hilo) Thread.currentThread()).getNumhilo() != turno) {
             try {
@@ -29,7 +29,7 @@ public class Turno {
                 Logger.getLogger(Turno.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        return turno;
+
     }
 
     public synchronized void siguienteTurno() {
@@ -38,7 +38,7 @@ public class Turno {
         } else {
             turno++;
         }
-        notifyAll();
+        notify();
     }
 
 }

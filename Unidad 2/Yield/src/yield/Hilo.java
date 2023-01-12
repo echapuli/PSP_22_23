@@ -24,8 +24,9 @@ public class Hilo extends Thread{
                 yield();
             }
             System.out.println("hilo "+numhilo+" - "+i);
+            t.siguienteTurno();            
             yield();
-            t.siguienteTurno();
+
         }
     }
     

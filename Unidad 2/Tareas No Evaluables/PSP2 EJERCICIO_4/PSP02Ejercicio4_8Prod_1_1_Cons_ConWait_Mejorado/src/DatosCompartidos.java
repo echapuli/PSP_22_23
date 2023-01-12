@@ -7,7 +7,7 @@ class DatosCompartidos {
     private String dato;
     private boolean dato_disponible = false;
 
-    public synchronized String getDato() {
+    public synchronized void cogeDato() {
         while (dato_disponible == false) {
             //no se ha producido ningun dato
             try {
@@ -16,9 +16,9 @@ class DatosCompartidos {
                 System.out.println("Interrumpido " + Thread.currentThread().getName());
             }
         }
-        dato_disponible = false;      
+        dato_disponible = false;    
+        System.out.println(((Consumidor)Thread.currentThread()).getNombre() + " consume el valor: " + dato);        
         notifyAll();
-        return dato;
     }
 
     public synchronized void newDato(String dato) {
@@ -31,7 +31,7 @@ class DatosCompartidos {
             }
         }
         this.dato = dato;
-        System.out.println("Almacenado el valor: "+dato);
+        System.out.println("Productor "+((Productor)Thread.currentThread()).getNombre()+" produce el valor: "+dato);
         dato_disponible = true;
         notifyAll();       
     }

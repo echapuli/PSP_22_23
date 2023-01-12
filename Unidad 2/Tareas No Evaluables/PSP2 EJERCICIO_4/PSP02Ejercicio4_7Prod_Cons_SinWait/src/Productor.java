@@ -1,7 +1,7 @@
 class Productor extends Thread {
 
-    public DatosCompartidos datos;
-    public String nombre;
+    private DatosCompartidos datos;
+    private String nombre;
 
     public Productor(DatosCompartidos dc, String nmbr) {
         datos = dc;
@@ -12,7 +12,6 @@ class Productor extends Thread {
         int i = 0;
         for (i=1;i<6;i++){
             datos.newDato(nombre + i);
-            System.out.println("produciendo "+ nombre + i); 
         }
     }
 }

@@ -2,7 +2,7 @@ class Productor extends Thread {
 
     private DatosCompartidos datos;
     private String nombre;
-    int totalDatos;
+    private int totalDatos;
 
     public Productor(DatosCompartidos dc, String nmbr, int totalDatos) {
         datos = dc;
@@ -14,9 +14,13 @@ class Productor extends Thread {
         int i;
         for (i=1;i<=totalDatos;i++){
             //intento almacenar el dato en datos compartido
-            datos.newDato(nombre + i); 
-            
+            datos.newDato("Dato " + i); 
         }
         System.out.println("se acaba el hilo "+ nombre);
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+    
 }

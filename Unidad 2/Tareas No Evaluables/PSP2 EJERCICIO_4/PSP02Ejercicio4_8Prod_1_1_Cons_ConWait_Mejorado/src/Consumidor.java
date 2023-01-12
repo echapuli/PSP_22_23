@@ -1,8 +1,7 @@
 
 import static java.lang.Thread.yield;
 
-
-public class Consumidor extends Thread{
+public class Consumidor extends Thread {
 
     private DatosCompartidos datos;
     private String nombre;
@@ -15,12 +14,14 @@ public class Consumidor extends Thread{
     }
 
     public void run() {
-     for (int i=1;i<=totalDatos;i++){            
-            String valorAlmacen = datos.getDato();
-           //muestro el valor cogido del almacen
-           System.out.println(nombre + " coge " + valorAlmacen);
+        for (int i = 1; i <= totalDatos; i++) {
+            datos.cogeDato();
         }
-     System.out.println("se acaba el hilo "+ nombre);
+        System.out.println("se acaba el hilo " + nombre);
     }
-}
 
+    public String getNombre() {
+        return nombre;
+    }
+
+}

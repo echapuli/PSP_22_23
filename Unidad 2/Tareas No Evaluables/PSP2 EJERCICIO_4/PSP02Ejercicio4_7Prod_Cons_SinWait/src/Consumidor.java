@@ -1,8 +1,8 @@
 
 public class Consumidor extends Thread{
 
-    public DatosCompartidos datos;
-    public String nombre;
+    private DatosCompartidos datos;
+    private String nombre;
 
     public Consumidor(DatosCompartidos dc, String nmbr) {
         datos = dc;
