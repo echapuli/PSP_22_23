@@ -9,7 +9,7 @@ class Consumidor extends Thread {
     public void run() {
         do {
             x = b.get();
-        } while (x >= 0);
+        } while (b.getN() >= 0);
         System.out.println("Fin del consumidor "+ this.getName());
     }
 }

@@ -14,5 +14,6 @@
             b.put(i);            
         }
         System.out.println("Fin del productor");
+        b.finalizar();
     }
 }

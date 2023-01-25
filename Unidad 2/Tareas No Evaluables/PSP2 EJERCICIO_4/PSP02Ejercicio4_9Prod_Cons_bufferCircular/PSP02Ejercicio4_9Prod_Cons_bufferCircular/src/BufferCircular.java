@@ -52,4 +52,12 @@ class BufferCircular {
         notifyAll();
         return x;
     }
+    public void finalizar(){
+        n=-1;
+    }
+
+    public int getN() {
+        return n;
+    }
+    
 }
