@@ -14,7 +14,7 @@ class Cliente {
             // … aqui irían las TAREAS QUE REALIZA EL CLIENTE 
             OutputStream aux = sCliente.getOutputStream();
             DataOutputStream flujo_salida = new DataOutputStream(aux);
-            int num = (int) (Math.random() * 9) + 1;
+            int num = (int) (Math.random() * 10) + 1;
             System.out.println("Mensaje a enviar al servidor. Salio un "+num);
             flujo_salida.writeUTF("Mensaje de salida que el cliente envia al servidor, He pensado en el número  " + num);
             
